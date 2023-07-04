@@ -22,21 +22,10 @@ describe('getFirstElement', () => {
     const { container } = render(<ExampleCompoent />);
     const el = TestUtil.getFirstElement(container, 'section');
 
+    // section要素の中に文言が入っていることを見ることでDOMツリーが取れている扱いにしている
     expect(el.nodeName).toBe('SECTION');
-  });
-
-  it('取得したエレメントのDOMが一致している', () => {
-    const result = TestRenderer.create(<ExampleCompoent />).toJSON();
-    const expectJson = TestRenderer.create(
-      <section>
-        <h2>ほげほげ</h2>
-        <p>ぴよぴよ</p>
-      </section>
-    ).toJSON();
-
-    if (Array.isArray(result) && result.length > 0) {
-      expect(result[0]).toStrictEqual(expectJson);
-    }
+    expect(el).toHaveTextContent('ほげほげ');
+    expect(el).toHaveTextContent('ぴよぴよ');
   });
 
   it('指定したエレメントが取得できない', () => {

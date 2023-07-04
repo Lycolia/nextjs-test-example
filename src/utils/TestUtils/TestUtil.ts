@@ -1,4 +1,4 @@
-export namespace TestUtils {
+export namespace TestUtil {
   /**
    * HTMLElement から elementName に一致する最初のエレメントを取得する
    * 見つからなければ例外をスローしテストを失敗させる

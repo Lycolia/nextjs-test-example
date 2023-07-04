@@ -1,6 +1,6 @@
 import TestRenderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
-import { TestUtils } from 'src/utils/TestUtils/TestUtil';
+import { TestUtil } from 'src/utils/TestUtils/TestUtil';
 
 const ExampleCompoent = () => {
   return (
@@ -20,7 +20,7 @@ const ExampleCompoent = () => {
 describe('getFirstElement', () => {
   it('指定したエレメントが取得できる', () => {
     const { container } = render(<ExampleCompoent />);
-    const el = TestUtils.getFirstElement(container, 'section');
+    const el = TestUtil.getFirstElement(container, 'section');
 
     expect(el.nodeName).toBe('SECTION');
   });
@@ -41,6 +41,6 @@ describe('getFirstElement', () => {
 
   it('指定したエレメントが取得できない', () => {
     const { container } = render(<ExampleCompoent />);
-    expect(() => TestUtils.getFirstElement(container, 'span')).toThrow();
+    expect(() => TestUtil.getFirstElement(container, 'span')).toThrow();
   });
 });

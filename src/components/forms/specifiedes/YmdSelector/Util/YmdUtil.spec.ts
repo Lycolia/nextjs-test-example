@@ -13,7 +13,7 @@ describe('createYearOptions', () => {
   });
 
   it('最大年引数がない場合の最大・最小年', () => {
-    const actual = YmdUtil.createYearOptions(2000);
+    const actual = YmdUtil.createYearOptions('2000');
 
     const maxYear = new Date().getFullYear().toString();
 
@@ -24,7 +24,7 @@ describe('createYearOptions', () => {
   });
 
   it('引数が全てある場合の最大・最小年', () => {
-    const actual = YmdUtil.createYearOptions(2000, 2010);
+    const actual = YmdUtil.createYearOptions('2000', '2010');
 
     expect(actual[0].text).toBe('2010');
 

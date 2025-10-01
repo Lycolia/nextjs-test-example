@@ -1,9 +1,9 @@
-const isProd = process.env.NODE_ENV === 'production';
+// @ts-check
 
-module.exports = (phase, { defaultConfig }) => {
-  return {
-    basePath: isProd ? '/deploy-path-here' : '',
-    assetPrefix: isProd ? '/assets-path-here' : '',
-    pageExtensions: ['page.tsx'],
-  };
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  pageExtensions: ['page.tsx']
 };
+
+module.exports = nextConfig;

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { JSX } from 'react';
 
 type LayoutProps = {
   title: string;

@@ -1,13 +1,7 @@
-import { Layout } from 'src/components/Layout';
+import { RootPageUsecase } from '../components/page/root/usecase';
 
 const IndexPage = () => {
-  return (
-    <Layout title={'Hello Next.js'}>
-      <>
-        <h1>Hello Next.js 👋</h1>
-      </>
-    </Layout>
-  );
+  return <RootPageUsecase />;
 };
 
 export default IndexPage;

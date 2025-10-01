@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "module": "es2020",
-    "lib": [
-      "dom",
-      "es2017"
-    ],
+    "target": "es2022",
+    "module": "es2022",
+    "lib": ["dom", "es2022"],
+    "types": ["@testing-library/jest-dom"],
     "allowJs": false,
     "checkJs": false,
     "jsx": "preserve",
@@ -23,14 +21,13 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "jest-setup.js"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", "jest-setup.js", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
